@@ -1,0 +1,19 @@
+#!groovy
+properties([disableConcurrentBuilts()])
+
+pipeline {
+    agent {
+        label 'master'
+    }
+    options {
+        buildDiscarder(logRotator(numtoKeepStr: '4',artifactNumToKeepStr: '4'))
+        timestamps()
+    }
+    stages {
+        stage("Unit test") {
+            steps {
+                sh 'ng test'
+            }
+        }
+    }
+}
