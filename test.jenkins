@@ -10,7 +10,7 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Simple test 1") {
+        stage("Simple test 2") {
             steps {
                 bat 'java -vesrion'
             }
