@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Simple test 1") {
             steps {
-                sh 'java -vesrion'
+                bat 'java -vesrion'
             }
         }
     }
