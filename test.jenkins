@@ -10,7 +10,7 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Unit test") {
+        stage("Simple test 1") {
             steps {
                 sh 'java -vesrion'
             }
