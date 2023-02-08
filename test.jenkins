@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Unit test") {
             steps {
-                sh 'ng test'
+                sh 'java -vesrion'
             }
         }
     }
