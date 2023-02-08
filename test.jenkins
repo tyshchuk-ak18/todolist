@@ -1,11 +1,11 @@
 #!groovy
-properties([disableConcurrentBuilts()])
 
 pipeline {
     agent {
         label 'master'
     }
     options {
+        disableConcurrentBuilds()
         buildDiscarder(logRotator(numToKeepStr: '4',artifactNumToKeepStr: '4'))
         timestamps()
     }
