@@ -1,11 +1,9 @@
 #!groovy
 
 pipeline {
-    agent {
-        label 'master'
-    }
+    agent any
     triggers {
-        pollSCM('****')
+        pollSCM('* * * * *')
     }
     options {
         disableConcurrentBuilds()
@@ -13,10 +11,15 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Simple test 5") {
+        stage("Simple test 6") {
             steps {
                 bat 'cd'
             }
+        }
+    }
+    post {
+        always {
+            
         }
     }
 }
