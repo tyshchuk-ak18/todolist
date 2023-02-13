@@ -2,16 +2,9 @@
 
 pipeline {
     agent any
-    triggers {
-        pollSCM('* * * * *')
-    }
-    options {
-        disableConcurrentBuilds()
-        buildDiscarder(logRotator(numToKeepStr: '4',artifactNumToKeepStr: '4'))
-        timestamps()
-    }
+    properties([disableConcurrentBuilds(), pipelineTriggers([pollSCM('H/15 * * * *')]), timestapse()])
     stages {
-        stage("Simple test 6") {
+        stage("Simple test 7") {
             steps {
                 bat 'cd'
             }
@@ -19,7 +12,12 @@ pipeline {
     }
     post {
         always {
-            
+            githubStatus context: 'continuous-integration/jenkins', state: 'success'
+            if (env.CHANGE_ID) {
+                githubComment message: "The pipeline completed successfully!"
+                githubLabel labels: ['approved']
+            }
+            cleanWs()
         }
     }
 }
