@@ -10,7 +10,7 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("Simple test 4") {
+        stage("Simple test 5") {
             steps {
                 bat 'cd'
             }
