@@ -13,7 +13,10 @@ pipeline {
     
     post {
         always {
-            emailext attachLog: true, body: 'Console log:', subject: 'Test', to: 'tyshchuk_ak18@nuwm.edu.ua'
+            emailext to: 'buyakuko@gmail.com',
+            subject: 'Test email',
+            body: 'Console log:',
+            attachLog: true
         }
     }
 }
