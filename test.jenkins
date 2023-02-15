@@ -4,14 +4,9 @@ pipeline {
     agent any
 
     stages {
-        stage("Init") {
-            steps {
-                bat 'npm instal'
-            }
-        }
         stage("Test") {
             steps{
-                bat 'test.bat'
+                bat 'npm test'
             }
         }
     }
