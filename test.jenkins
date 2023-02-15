@@ -4,16 +4,16 @@ pipeline {
     agent any
 
     stages {
-        stage("Test") {
-            steps{
-                bat 'npm test'
+        stage('Build') {
+            steps {
+                git 'https://github.com/tyshchuk-ak18/todolist.git'
             }
         }
-    }
-
-    post {
-        always {
-            cleanWs()
+        stage('Test') {
+            steps{
+                bat 'npm i'
+                bat 'npm run ng test'
+            }
         }
     }
 }
