@@ -4,14 +4,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Prepare packages') {
             steps {
-                git 'https://github.com/tyshchuk-ak18/todolist.git'
+                bat 'npm i'
             }
         }
-        stage('Test') {
+        stage('Build and Test') {
             steps{
-                bat 'npm i'
                 bat 'npm run ng test'
             }
         }
