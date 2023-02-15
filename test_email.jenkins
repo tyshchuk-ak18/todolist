@@ -1,0 +1,19 @@
+#!groovy
+
+pipeline {
+    agent any
+
+    stages {
+        stage('echo') {
+            steps {
+                echo "Hallo Welt"
+            }
+        }
+    }
+    
+    post {
+        always {
+            emailext attachLog: true, body: 'Console log:', subject: 'Test', to: 'tyshchuk_ak18@gmail.com'
+        }
+    }
+}
