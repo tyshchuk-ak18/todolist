@@ -4,11 +4,11 @@ pipeline {
     agent any
     options{
         disableConcurrentBuilds()
-        pipelineTriggers([pollSCM('H/15 * * * *')])
+        pipelineTriggers([pollSCM('H/5 * * * *')])
         timestapse()
     }
     stages {
-        stage("Simple test 8") {
+        stage("Simple test 9") {
             steps {
                 bat 'cd'
             }
