@@ -4,8 +4,10 @@ pipeline {
     agent any
     options{
         disableConcurrentBuilds()
-        triggers([pollSCM('H/5 * * * *')])
         timestamps()
+    }
+    triggers{
+        pollSCM('H/5 * * * *')
     }
     stages {
         stage("Simple test") {
