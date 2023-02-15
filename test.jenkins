@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Simple test") {
             steps {
-                bat 'ng'
+                bat 'cd todolist'
             }
         }
     }
