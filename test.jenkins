@@ -19,6 +19,7 @@ pipeline {
     post {
         always {
             emailext to: 'tyshchuk_ak18@nuwm.edu.ua',
+            subject: '',
             body: '',
             attachLog: true
         }

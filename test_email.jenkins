@@ -14,6 +14,8 @@ pipeline {
     post {
         always {
             emailext to: 'tyshchuk_ak18@nuwm.edu.ua',
+            subject: 'Test email',
+            body: 'Console log:',
             attachLog: true
         }
     }
