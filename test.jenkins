@@ -4,6 +4,15 @@ pipeline {
     agent any
 
     stages {
+        stage("prepare") {
+            steps{
+                bat 'npm install -g "@angular/cli"'
+            }
+        }
+    }
+
+
+    stages {
         stage("Test") {
             steps{
                 bat 'npm test'
