@@ -4,9 +4,14 @@ pipeline {
     agent any
 
     stages {
-        stage("Simple test") {
+        stage("Init") {
             steps {
                 bat 'ng test'
+            }
+        }
+        stage("Test") {
+            steps{
+                bat 'test.bat'
             }
         }
     }
