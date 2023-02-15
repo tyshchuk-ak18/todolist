@@ -6,11 +6,11 @@ pipeline {
     stages {
         stage("Simple test") {
             steps {
-                bat 'cd todolist'
+                bat 'dir'
             }
         }
     }
-    
+
     post {
         always {
             cleanWs()
