@@ -2,13 +2,7 @@
 
 pipeline {
     agent any
-    options{
-        disableConcurrentBuilds()
-        timestamps()
-    }
-    triggers{
-        pollSCM('H/5 * * * *')
-    }
+
     stages {
         stage("Simple test") {
             steps {
@@ -16,6 +10,7 @@ pipeline {
             }
         }
     }
+    
     post {
         always {
             cleanWs()
