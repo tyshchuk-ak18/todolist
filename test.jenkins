@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Simple test") {
             steps {
-                bat 'dir'
+                bat 'ng test'
             }
         }
     }
