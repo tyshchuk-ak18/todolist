@@ -12,20 +12,14 @@ pipeline {
         stage('Build and Test') {
             steps {
                 //bat 'npm run ng test'
-                bat 'npm'
+                echo 'Hallo Welt'
             }
         }
     }
 
     post {
         always {
-            mail bcc: '',
-            cc: '',
-            from: '',
-            replyTo: '',
-            subject: '' + env.PROJECT_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + env.BUILD_STATUS + '!',
-            body: env.PROJECT_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + env.BUILD_STATUS + ':/nCheck console output at ' + env.BUILD_URL + ' to view the results.',
-            to: 'tyshchuk_ak18@nuwm.edu.ua'
+            emailext attachLog: true, body: '', subject: '', to: 'tyshchuk_ak18@nuwm.edu.ua'
         }
     }
 }
