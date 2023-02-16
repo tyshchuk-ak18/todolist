@@ -19,10 +19,13 @@ pipeline {
 
     post {
         always {
-            emailext to: 'tyshchuk_ak18@nuwm.edu.ua',
-            subject: '',
-            body: '',
-            attachLog: true
+            mail bcc: '',
+            cc: '',
+            from: '',
+            replyTo: '',
+            subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!',
+            body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:/nCheck console output at $BUILD_URL to view the results.',
+            to: 'tyshchuk_ak18@gmail.com'
         }
     }
 }
