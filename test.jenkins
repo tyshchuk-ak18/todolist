@@ -23,8 +23,8 @@ pipeline {
             cc: '',
             from: '',
             replyTo: '',
-            subject: '' + $PROJECT_NAME + ' - Build # ' + $BUILD_NUMBER + ' - ' + $BUILD_STATUS + '!',
-            body: $PROJECT_NAME + ' - Build # ' + $BUILD_NUMBER + ' - ' + $BUILD_STATUS + ':/nCheck console output at ' + $BUILD_URL + ' to view the results.',
+            subject: '' + env.PROJECT_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + env.BUILD_STATUS + '!',
+            body: env.PROJECT_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + env.BUILD_STATUS + ':/nCheck console output at ' + env.BUILD_URL + ' to view the results.',
             to: 'tyshchuk_ak18@nuwm.edu.ua'
         }
     }
