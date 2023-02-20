@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build and Test') {
             steps {
-                //bat 'npm run ng test'
+                //bat 'npm run ng e2e'
                 echo 'Hallo Welt'
             }
         }
@@ -21,8 +21,8 @@ pipeline {
         always {
             emailext attachLog: true,
             body: '',
-            subject: env.JOB_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + currentBuild.currentResult + '!',
-            to: 'tyshchuk_ak18@nuwm.edu.ua, zeonet@gmail.com, demchuk_ak19@nuwm.edu.ua, holiuk_ak19@nuwm.edu.ua'
+            subject: env.JOB_NAME + ' - Build #' + env.BUILD_NUMBER + ' - ' + currentBuild.currentResult + '!',
+            to: 'tyshchuk_ak18@nuwm.edu.ua'
         }
     }
 }
