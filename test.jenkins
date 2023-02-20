@@ -19,7 +19,10 @@ pipeline {
 
     post {
         always {
-            emailext attachLog: true, body: '', subject: env.JOB_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + currentBuild.currentResult + '!', to: 'tyshchuk_ak18@nuwm.edu.ua'
+            emailext attachLog: true,
+            body: '',
+            subject: env.JOB_NAME + ' - Build # ' + env.BUILD_NUMBER + ' - ' + currentBuild.currentResult + '!',
+            to: 'tyshchuk_ak18@nuwm.edu.ua, zeonet@gmail.com, demchuk_ak19@nuwm.edu.ua, holiuk_ak19@nuwm.edu.ua'
         }
     }
 }
