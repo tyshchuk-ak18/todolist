@@ -4,6 +4,6 @@ describe('angularjs homepage todo list', function() {
     
     browser.driver.getTitle().then(function(pageTitle) {
       expect(pageTitle).toEqual('Example Domain');
-});
-});
+    });
+  });
 });
